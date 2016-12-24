@@ -27,8 +27,8 @@ matrix:
         - python: pypy3
           env: TOXENV=pypy3
 
-  allow_failures:
-  - python: 3.6-dev
+    allow_failures:
+        - python: 3.6-dev
 
 install:
     - travis_retry pip install tox
