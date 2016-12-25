@@ -1,3 +1,10 @@
+[run]
+include =
+    supervisor/*
+omit =
+    supervisor/tests/*
+branch = True
+
 [report]
 exclude_lines =
     pragma: no cover
@@ -8,10 +15,3 @@ exclude_lines =
     raise NotImplementedError
     if 0:
     if __name__ == .__main__.:
-
-[run]
-include =
-    supervisor
-omit =
-    supervisor/tests/*
-branch = True
