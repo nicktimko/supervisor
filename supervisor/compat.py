@@ -4,7 +4,7 @@ import sys
 
 PY3 = sys.version_info[0] == 3
 
-if PY3: # pragma: no cover
+if PY3:
     long = int
     basestring = str
     raw_input = input
@@ -14,7 +14,7 @@ if PY3: # pragma: no cover
     def as_bytes(s): return s if isinstance(s,bytes) else s.encode('utf8')
     def as_string(s): return s if isinstance(s,str) else s.decode('utf8')
 
-else: # pragma: no cover
+else:
     long = long
     raw_input = raw_input
     unicode = unicode
@@ -22,7 +22,7 @@ else: # pragma: no cover
     def as_bytes(s): return s if isinstance(s, str) else s.encode('utf-8')
     def as_string(s): return s if isinstance(s, unicode) else s.decode('utf-8')
 
-def total_ordering(cls): # pragma: no cover
+def total_ordering(cls):
     """Class decorator that fills in missing ordering methods"""
     convert = {
         '__lt__': [
@@ -59,80 +59,80 @@ def total_ordering(cls): # pragma: no cover
             setattr(cls, opname, opfunc)
     return cls
 
-try: # pragma: no cover
+try:
     import xmlrpc.client as xmlrpclib
-except ImportError: # pragma: no cover
+except ImportError:
     import xmlrpclib
 
-try: # pragma: no cover
+try:
     import urllib.parse as urlparse
     import urllib.parse as urllib
-except ImportError: # pragma: no cover
+except ImportError:
     import urlparse
     import urllib
 
-try: # pragma: no cover
+try:
     from hashlib import sha1
-except ImportError: # pragma: no cover
+except ImportError:
     from sha import new as sha1
 
-try: # pragma: no cover
+try:
     import syslog
-except ImportError: # pragma: no cover
+except ImportError:
     syslog = None
 
-try: # pragma: no cover
+try:
     import configparser as ConfigParser
-except ImportError: # pragma: no cover
+except ImportError:
    import ConfigParser
 
-try: # pragma: no cover
+try:
     from StringIO import StringIO
-except ImportError: # pragma: no cover
+except ImportError:
     from io import StringIO
 
-try: # pragma: no cover
+try:
     from sys import maxint
-except ImportError: # pragma: no cover
+except ImportError:
     from sys import maxsize as maxint
 
-try: # pragma: no cover
+try:
     from urllib.parse import parse_qs, parse_qsl
-except ImportError: # pragma: no cover
+except ImportError:
     from cgi import parse_qs, parse_qsl
 
-try: # pragma: no cover
+try:
     import http.client as httplib
-except ImportError: # pragma: no cover
+except ImportError:
     import httplib
 
-try: # pragma: no cover
+try:
     from base64 import decodebytes as decodestring, encodebytes as encodestring
-except ImportError: # pragma: no cover
+except ImportError:
     from base64 import decodestring, encodestring
 
 
-if PY3: # pragma: no cover
+if PY3:
     func_attribute = '__func__'
-else: # pragma: no cover
+else:
     func_attribute = 'im_func'
 
-try: # pragma: no cover
+try:
     from xmlrpc.client import Fault
-except ImportError: # pragma: no cover
+except ImportError:
     from xmlrpclib import Fault
 
-try: # pragma: no cover
+try:
     from string import ascii_letters as letters
-except ImportError: # pragma: no cover
+except ImportError:
     from string import letters
 
-try: # pragma: no cover
+try:
     from hashlib import md5
-except ImportError: # pragma: no cover
+except ImportError:
     from md5 import md5
 
-try: # pragma: no cover
+try:
     import thread
-except ImportError: # pragma: no cover
+except ImportError:
     import _thread as thread
